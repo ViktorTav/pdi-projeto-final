@@ -28,16 +28,16 @@ class Main:
         agent_killer_img = card[:height,:AGENT_IMAGE_WIDTH+1]
         agent_killed_img = card[:height,width-AGENT_IMAGE_WIDTH:width]
 
-        cv2.imshow("Kill Log", card)
+        #cv2.imshow("Kill Log", card)
 
-        cv2.imshow("Agent Killer", agent_killer_img)
-        cv2.imshow("Agent Killed", agent_killed_img)
+        #cv2.imshow("Agent Killer", agent_killer_img)
+        #cv2.imshow("Agent Killed", agent_killed_img)
 
         cv2.waitKey()
 
         card_threshold, stats = self._get_stats_from_card(card)
 
-        cv2.imshow("Card Threshold", card_threshold)
+        #cv2.imshow("Card Threshold", card_threshold)
 
         player_killer_name_chars_stats = stats[0]
         player_killed_name_chars_stats = stats[-1]
@@ -171,20 +171,21 @@ class Main:
         w = stat[cv2.CC_STAT_WIDTH]
         h = stat[cv2.CC_STAT_HEIGHT]
 
-        cv2.imshow(f"{time.time()}", threshold[y:y+h, x:x+w])
+        #cv2.imshow(f"{time.time()}", threshold[y:y+h, x:x+w])
 
         return threshold[y:y+h, x:x+w]
 
 def main():
-    img = cv2.imread("./game_samples/7.png")
 
     instance = Main()
 
-    start = time.time()
-    info = instance.get_card_info(img)
-    print(info)
-    end = time.time()
-    print(end - start)
+    for i in range(1, 15):
+        start = time.time()
+        img = cv2.imread(f"./game_samples/{i}.png")
+        info = instance.get_card_info(img)
+        print(info)
+        end = time.time()
+        print(end - start)
 
 if __name__ == "__main__":
     main()

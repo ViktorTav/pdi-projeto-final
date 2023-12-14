@@ -16,6 +16,10 @@
         "src": "./chars_training/Omen.png"
     },
     {
+        "name":"NOTALKTOME",
+        "src": "./chars_training/NOTALKTOME.png"
+    },
+    {
         "name":"Kay/o",
         "src": "./chars_training/Kayo.png"
     },
@@ -40,16 +44,20 @@
         "src": "./chars_training/SolenPJL.png"
     },
     {
-        "name":"Vscardas",
+        "name":"VsCardas",
         "src": "./chars_training/Vscardas.png"
     },
     {
-        "name":"Vscardas_2",
+        "name":"VsCardas_2",
         "src": "./chars_training/Vscardas_2.png"
     },
     {
         "name":"LLLMk",
         "src": "./chars_training/LLLMK.png"
+    },
+    {
+        "name":"LLLMk",
+        "src": "./chars_training/LLLMK_2.png"
     },
     {
         "name":"Brimstone",
@@ -66,6 +74,26 @@
     {
         "name":"Yoru",
         "src": "./chars_training/Yoru.png"
+    },
+    {
+        "name":"ZA",
+        "src": "./chars_training/ZA.png"
+    },
+    {
+        "name":"Reyna",
+        "src": "./chars_training/Reyna.png"
+    },
+    {
+        "name":"Iso",
+        "src": "./chars_training/Iso.png"
+    },
+    {
+        "name":"B",
+        "src": "./chars_training/B.png"
+    },
+    {
+        "name":"sa",
+        "src": "./chars_training/sa.png"
     },
     {
         "name":"SmurfDoSpacca",

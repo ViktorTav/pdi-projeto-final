@@ -73,7 +73,7 @@ def get_chars(name, source):
         img_char = img[y:y+h, x:x+w]
 
         name = generate_random_string()
-        dest = f"./chars_2/{name}.png"
+        dest = f"./chars/{name}.png"
 
         chars_info.append({
             "char": chars[i-1],
@@ -84,11 +84,11 @@ def get_chars(name, source):
 
         cv2.imwrite(dest, img_char)
 
-    with open("./chars_2.json", "r") as file:
+    with open("./chars.json", "r") as file:
         current_chars = json.loads(file.read())
 
     current_chars.extend(chars_info)
-    with open("./chars_2.json", "w") as file:
+    with open("./chars.json", "w") as file:
         file.write(json.dumps(current_chars, indent=4))
 
     covered = ""

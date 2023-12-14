@@ -1,7 +1,11 @@
+import os
 import random
 import string
 import cv2
 import json
+
+import shutil
+
 
 def merge_near_components(stats, dist_x, dist_y):
     i = 2
@@ -44,17 +48,19 @@ def sort_components_by_left(stats):
 def generate_random_string(n = 15):
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=n))
 
-def get_chars():
-    img = cv2.imread("./chars.png", cv2.IMREAD_GRAYSCALE)
+def get_chars(name, source):
+    img = cv2.imread(source, cv2.IMREAD_GRAYSCALE)
 
-    _, img = cv2.threshold(img, 200, 255, cv2.THRESH_BINARY_INV)
+    _, img = cv2.threshold(img, 210, 255, cv2.THRESH_BINARY)
+    cv2.imwrite("img.png", img)
 
-    chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    chars = name
 
     _, _,  stats, _ = cv2.connectedComponentsWithStats(img)
 
     stats = sort_components_by_left(stats)
-    merge_near_components(stats, 13, 20)
+    merge_near_components(stats, 0, 2)
+    print(len(stats))
 
     chars_info = []
 
@@ -67,7 +73,7 @@ def get_chars():
         img_char = img[y:y+h, x:x+w]
 
         name = generate_random_string()
-        dest = f"./chars/{name}.png"
+        dest = f"./chars_2/{name}.png"
 
         chars_info.append({
             "char": chars[i-1],
@@ -78,7 +84,37 @@ def get_chars():
 
         cv2.imwrite(dest, img_char)
 
-    with open("./chars.json", "w+") as file:
-        file.write(json.dumps(chars_info, indent=4))
+    with open("./chars_2.json", "r") as file:
+        current_chars = json.loads(file.read())
 
-get_chars()
+    current_chars.extend(chars_info)
+    with open("./chars_2.json", "w") as file:
+        file.write(json.dumps(current_chars, indent=4))
+
+    covered = ""
+
+    for char in current_chars:
+        if char["char"] not in covered:
+            covered+=char["char"]
+
+    print(covered)
+    print(len(covered))
+    print()
+
+
+if __name__ == "__main__":
+    with open("./chars.json", "w+") as file:
+        file.write("[]")
+
+    shutil.rmtree("./chars")
+    os.mkdir("./chars")    
+
+    with open("./chars_training/char.json", "r+") as file:
+        current_chars = json.loads(file.read())
+
+    for char in current_chars:
+        get_chars(char["name"], char["src"])
+        
+
+
+#get_chars()

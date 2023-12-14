@@ -1,0 +1,74 @@
+[
+    {
+        "name":"bloom",
+        "src": "./chars_training/bloom.png"
+    },
+    {
+        "name":"Chamber",
+        "src": "./chars_training/Chamber.png"
+    },
+    {
+        "name":"Kaieras",
+        "src": "./chars_training/Kaieras.png"
+    },
+    {
+        "name":"Omen",
+        "src": "./chars_training/Omen.png"
+    },
+    {
+        "name":"Kay/o",
+        "src": "./chars_training/Kayo.png"
+    },
+    {
+        "name":"TaldoMilho",
+        "src": "./chars_training/TaldoMilho.png"
+    },
+    {
+        "name":"Ch4pl1n",
+        "src": "./chars_training/Ch4pl1n.png"
+    },
+    {
+        "name":"Crosst",
+        "src": "./chars_training/Crosst.png"
+    },
+    {
+        "name":"Raze",
+        "src": "./chars_training/Raze.png"
+    },
+    {
+        "name":"SolenPJL",
+        "src": "./chars_training/SolenPJL.png"
+    },
+    {
+        "name":"Vscardas",
+        "src": "./chars_training/Vscardas.png"
+    },
+    {
+        "name":"Vscardas_2",
+        "src": "./chars_training/Vscardas_2.png"
+    },
+    {
+        "name":"LLLMk",
+        "src": "./chars_training/LLLMK.png"
+    },
+    {
+        "name":"Brimstone",
+        "src": "./chars_training/Brimstone.png"
+    },
+    {
+        "name":"Eu",
+        "src": "./chars_training/Eu.png"
+    },
+    {
+        "name":"Pedru",
+        "src": "./chars_training/Pedru.png"
+    },
+    {
+        "name":"Yoru",
+        "src": "./chars_training/Yoru.png"
+    },
+    {
+        "name":"SmurfDoSpacca",
+        "src": "./chars_training/SmurfDoSpacca.png"
+    }
+]

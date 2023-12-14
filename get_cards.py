@@ -81,8 +81,9 @@ def get_screen_info():
 
     img = np.array(screenshoot.getdata(), dtype=np.uint8).reshape(
         (screenshoot.size[1], screenshoot.size[0], 3))
+    print("salve")
 
-    cv2.imwrite(f"./imgs/{time()}.png", cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
+    cv2.imwrite(f"./new_imgs/{time()}.png", cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
 
     # cards = get_cards(img)
 
@@ -90,3 +91,6 @@ def get_screen_info():
     #     cards[i] = cv2.cvtColor(cards[i], cv2.COLOR_RGB2BGR)
     #     cv2.imwrite(f"./imgs/{time()}_card_{i}.png",
     #                 cards[i])
+
+if __name__ == "__main__":
+    interval = Interval(1, get_screen_info)
